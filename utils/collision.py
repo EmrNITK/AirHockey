@@ -16,8 +16,8 @@ def handle_collision(ball, left_paddle, right_paddle, frame):
 
     # Collision with the right slider
     if ball.x + ball.radius >= right_paddle.x - right_paddle.width // 2 and (
-        ball.y + ball.radius >= right_paddle.y - right_paddle.height // 2
-        and ball.y + ball.radius <= right_paddle.y + right_paddle.height // 2
+        ball.y + ball.radius >= right_paddle.y - right_paddle.height // 2 
+        and ball.y - ball.radius <= right_paddle.y + right_paddle.height // 2
     ):
         ball.x_vel = -ball.x_vel
 
@@ -26,7 +26,7 @@ def handle_collision(ball, left_paddle, right_paddle, frame):
     # Collision with left slider
     if ball.x - ball.radius <= left_paddle.x + left_paddle.width // 2 and (
         ball.y + ball.radius >= left_paddle.y - left_paddle.height // 2
-        and ball.y + ball.radius <= left_paddle.y + left_paddle.height // 2
+        and ball.y - ball.radius <= left_paddle.y + left_paddle.height // 2
     ):
         ball.x_vel = -ball.x_vel
 
